@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNUVC - SNU Venture Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-black shadow-lg fixed w-full top-0 z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-white">SNUVC</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-white transition">소개</a>
+                    <a href="#investors" class="text-gray-300 hover:text-white transition">투자자 네트워크</a>
+                    <a href="#team" class="text-gray-300 hover:text-white transition">팀 소개</a>
+                    <a href="#services" class="text-gray-300 hover:text-white transition">서비스</a>
+                    <a href="#contact" class="bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-200 transition font-semibold">문의하기</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-black text-white">
+        <div class="max-w-7xl mx-auto text-center fade-in">
+            <h2 class="text-5xl md:text-6xl font-bold mb-6">
+                글로벌 VC 인사이트를<br/>
+                <span class="text-gray-300">학생 창업가에게</span>
+            </h2>
+            <p class="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+                서울대학교 학부생들이 한국과 실리콘밸리의 정상급 벤처캐피탈리스트들을 만나 얻은 인사이트를 바탕으로,
+                학생 및 초기 창업가들에게 실질적인 컨설팅과 액셀러레이팅을 제공합니다.
+            </p>
+            <a href="#contact" class="inline-block bg-white text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-200 transition">
+                무료 상담 신청하기
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">SNUVC는?</h3>
+                <p class="text-xl text-gray-600">서울대학교 학부생으로 구성된 벤처 컨설팅 팀</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl border-2 border-gray-200 hover:border-gray-400 transition">
+                    <!-- <div class="text-4xl mb-4"></div> -->
+                    <h4 class="text-2xl font-bold mb-3 text-gray-900">실전 인사이트</h4>
+                    <p class="text-gray-600">한국과 실리콘밸리의 정상급 VC들과의 직접 미팅을 통해 얻은 실질적인 투자 인사이트</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl border-2 border-gray-200 hover:border-gray-400 transition">
+                    <!-- <div class="text-4xl mb-4"></div> -->
+                    <h4 class="text-2xl font-bold mb-3 text-gray-900">맞춤형 지원</h4>
+                    <p class="text-gray-600">학생 및 초기 창업가의 눈높이에 맞춘 실질적인 컨설팅과 액셀러레이팅 프로그램</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl border-2 border-gray-200 hover:border-gray-400 transition">
+                    <!-- <div class="text-4xl mb-4"></div> -->
+                    <h4 class="text-2xl font-bold mb-3 text-gray-900">네트워크 연결</h4>
+                    <p class="text-gray-600">글로벌 VC 네트워크와의 직접적인 연결 기회 제공</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investors Section -->
+    <section id="investors" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">투자자 네트워크</h3>
+                <p class="text-xl text-gray-600">SNUVC가 협력하고 만나 인사이트를 얻은 전문가들</p>
+            </div>
+            
+            <!-- 한국 VC -->
+            <div class="mb-12">
+                <h4 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <span class="mr-3">🇰🇷</span> Korea
+                </h4>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- 한국투자증권 -->
+                    <div class="bg-gray-50 p-6 rounded-xl border-2 border-gray-900 hover:shadow-lg transition">
+                        <h5 class="text-xl font-bold mb-2 text-gray-900">한국투자증권</h5>
+                        <p class="text-gray-700 font-semibold mb-3">이사</p>
+                        <p class="text-gray-600 text-sm">한국 대표 금융기관의 벤처투자 전문가와의 협력</p>
+                    </div>
+                    
+                    <!-- 블루포인트파트너스 -->
+                    <div class="bg-gray-50 p-6 rounded-xl border-2 border-gray-900 hover:shadow-lg transition">
+                        <h5 class="text-xl font-bold mb-2 text-gray-900">블루포인트파트너스</h5>
+                        <p class="text-gray-700 font-semibold mb-3">심사역</p>
+                        <p class="text-gray-600 text-sm">초기 스타트업 투자 전문 VC와의 협력</p>
+                    </div>
+                    
+                    <!-- 추후 공개 1 -->
+                    <div class="bg-gray-900 p-6 rounded-xl border-2 border-gray-900 hover:shadow-lg transition">
+                        <h5 class="text-xl font-bold mb-2 text-gray-400">추후 공개 예정</h5>
+                        <p class="text-gray-500 font-semibold mb-3">Coming Soon</p>
+                        <p class="text-gray-600 text-sm">글로벌 네트워크 확장 중</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Silicon Valley VC -->
+            <div>
+                <h4 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <span class="mr-3">🇺🇸</span> Silicon Valley
+                </h4>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- 추후 공개 1 -->
+                    <div class="bg-gray-900 p-6 rounded-xl border-2 border-gray-900 hover:shadow-lg transition">
+                        <h5 class="text-xl font-bold mb-2 text-gray-400">추후 공개 예정</h5>
+                        <p class="text-gray-500 font-semibold mb-3">Coming Soon</p>
+                        <p class="text-gray-600 text-sm">실리콘밸리 VC 미팅 진행 중</p>
+                    </div>
+                    
+                    <!-- 추후 공개 2 -->
+                    <div class="bg-gray-900 p-6 rounded-xl border-2 border-gray-900 hover:shadow-lg transition">
+                        <h5 class="text-xl font-bold mb-2 text-gray-400">추후 공개 예정</h5>
+                        <p class="text-gray-500 font-semibold mb-3">Coming Soon</p>
+                        <p class="text-gray-600 text-sm">실리콘밸리 VC 미팅 진행 중</p>
+                    </div>
+                    
+                    <!-- 추후 공개 3 -->
+                    <div class="bg-gray-900 p-6 rounded-xl border-2 border-gray-900 hover:shadow-lg transition">
+                        <h5 class="text-xl font-bold mb-2 text-gray-400">추후 공개 예정</h5>
+                        <p class="text-gray-500 font-semibold mb-3">Coming Soon</p>
+                        <p class="text-gray-600 text-sm">실리콘밸리 VC 미팅 진행 중</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-gray-900 p-8 rounded-xl text-white text-center">
+                <h4 class="text-2xl font-bold mb-3">더 많은 글로벌 VC들과 만남 예정</h4>
+                <p class="text-lg text-gray-300">한국과 실리콘밸리의 정상급 벤처캐피탈과의 네트워크를 지속적으로 확장하고 있습니다</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">팀 소개</h3>
+                <p class="text-xl text-gray-600">서울대학교 학부생으로 구성된 SNUVC 팀원들</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 박도현 -->
+                <div class="bg-white p-8 rounded-xl border-2 border-gray-200 hover:border-gray-900 transition">
+                    <div class="w-32 h-32 bg-gray-200 rounded-full overflow-hidden mb-4 mx-auto">
+                        <img src="images/park-dohyun.jpg" alt="박도현" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-900 text-center mb-2">박도현</h4>
+                    <p class="text-gray-700 font-semibold text-center mb-1">자유전공학부</p>
+                    <p class="text-gray-500 text-sm text-center">21학번</p>
+                </div>
+                
+                <!-- 강희석 -->
+                <div class="bg-white p-8 rounded-xl border-2 border-gray-200 hover:border-gray-900 transition">
+                    <div class="w-32 h-32 bg-gray-200 rounded-full overflow-hidden mb-4 mx-auto">
+                        <img src="images/kang-heeseok.jpg" alt="강희석" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-900 text-center mb-2">강희석</h4>
+                    <p class="text-gray-700 font-semibold text-center mb-1">자유전공학부</p>
+                    <p class="text-gray-500 text-sm text-center">24학번</p>
+                </div>
+                
+                <!-- 이지우 -->
+                <div class="bg-white p-8 rounded-xl border-2 border-gray-200 hover:border-gray-900 transition">
+                    <div class="w-32 h-32 bg-gray-200 rounded-full overflow-hidden mb-4 mx-auto">
+                        <img src="images/lee-jiwoo.jpg" alt="이지우" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-900 text-center mb-2">이지우</h4>
+                    <p class="text-gray-700 font-semibold text-center mb-1">자유전공학부</p>
+                    <p class="text-gray-500 text-sm text-center">24학번</p>
+                </div>
+                
+                <!-- 정현수 -->
+                <div class="bg-white p-8 rounded-xl border-2 border-gray-200 hover:border-gray-900 transition">
+                    <div class="w-32 h-32 bg-gray-200 rounded-full overflow-hidden mb-4 mx-auto">
+                        <img src="images/jung-hyunsoo.jpg" alt="정현수" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-900 text-center mb-2">정현수</h4>
+                    <p class="text-gray-700 font-semibold text-center mb-1">자유전공학부</p>
+                    <p class="text-gray-500 text-sm text-center">24학번</p>
+                </div>
+                
+                <!-- 김우성 -->
+                <div class="bg-white p-8 rounded-xl border-2 border-gray-200 hover:border-gray-900 transition">
+                    <div class="w-32 h-32 bg-gray-200 rounded-full overflow-hidden mb-4 mx-auto">
+                        <img src="images/kim-woosung.jpg" alt="김우성" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-900 text-center mb-2">김우성</h4>
+                    <p class="text-gray-700 font-semibold text-center mb-1">학부대학 광역</p>
+                    <p class="text-gray-500 text-sm text-center">25학번</p>
+                </div>
+                
+                <!-- 기태현 -->
+                <div class="bg-white p-8 rounded-xl border-2 border-gray-200 hover:border-gray-900 transition">
+                    <div class="w-32 h-32 bg-gray-200 rounded-full overflow-hidden mb-4 mx-auto">
+                        <img src="images/ki-taehyun.jpg" alt="기태현" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-900 text-center mb-2">기태현</h4>
+                    <p class="text-gray-700 font-semibold text-center mb-1">학부대학 광역</p>
+                    <p class="text-gray-500 text-sm text-center">25학번</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">제공 서비스</h3>
+                <p class="text-xl text-gray-600">학생 및 초기 창업가를 위한 맞춤형 지원</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-gray-50 p-8 rounded-xl border-2 border-gray-200">
+                    <h4 class="text-3xl font-bold mb-6 text-gray-900">💼 벤처 컨설팅</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-gray-900 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">비즈니스 모델 검증 및 개선</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-gray-900 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">투자 유치 전략 수립</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-gray-900 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">피칭 덱 및 사업계획서 리뷰</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-gray-900 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">시장 조사 및 경쟁 분석</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl border-2 border-gray-200">
+                    <h4 class="text-3xl font-bold mb-6 text-gray-900">🚀 액셀러레이팅</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-gray-900 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">멘토링 및 정기 미팅</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-gray-900 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">VC 네트워크 연결 지원</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-gray-900 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">창업 초기 단계별 가이드</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-gray-900 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">실전 VC 인사이트 공유</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-white mb-4">지금 바로 시작하세요</h3>
+                <p class="text-xl text-gray-400">무료 상담 신청하고 글로벌 VC 인사이트를 경험해보세요</p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
+                <form id="contactForm" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-semibold text-gray-900 mb-2">이름 *</label>
+                        <input type="text" id="name" name="name" required 
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-gray-900 mb-2">이메일 *</label>
+                        <input type="email" id="email" name="email" required 
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition">
+                    </div>
+                    <div>
+                        <label for="company" class="block text-sm font-semibold text-gray-900 mb-2">소속 / 프로젝트명</label>
+                        <input type="text" id="company" name="company" 
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-semibold text-gray-900 mb-2">문의 내용 *</label>
+                        <textarea id="message" name="message" rows="5" required 
+                            class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition"></textarea>
+                    </div>
+                    <button type="submit" 
+                        class="w-full bg-gray-900 text-white py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 transition">
+                        문의하기
+                    </button>
+                    <p id="statusMessage" class="text-center text-sm"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h4 class="text-2xl font-bold mb-2">SNUVC</h4>
+                <p class="text-gray-400 mb-4">SNU Venture Consulting</p>
+                <p class="text-gray-500 text-sm">© 2024 SNUVC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw4BEzaKLK_X7EQPPbxcUq6NLg8gWvbDmuIWPSyYxigDUQqsShswU8LjQqk7WvFPZiR/exec';
+        
+        // 부드러운 스크롤
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 폼 제출 처리
+        const form = document.getElementById('contactForm');
+        const statusMessage = document.getElementById('statusMessage');
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitButton = form.querySelector('button[type="submit"]');
+            
+            // 폼 데이터 수집
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                company: document.getElementById('company').value,
+                message: document.getElementById('message').value,
+                timestamp: new Date().toLocaleString('ko-KR')
+            };
+            
+            // 버튼 비활성화
+            submitButton.disabled = true;
+            submitButton.textContent = '전송 중...';
+            statusMessage.textContent = '';
+            
+            try {
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                // no-cors 모드에서는 응답을 확인할 수 없으므로 성공으로 간주
+                statusMessage.textContent = '✅ 문의가 성공적으로 전송되었습니다!';
+                statusMessage.className = 'text-center text-sm text-green-600 font-semibold';
+                form.reset();
+                
+            } catch (error) {
+                statusMessage.textContent = '❌ 전송 실패. 다시 시도해주세요.';
+                statusMessage.className = 'text-center text-sm text-red-600 font-semibold';
+                console.error('Error:', error);
+            } finally {
+                // 3초 후 버튼 재활성화
+                setTimeout(() => {
+                    submitButton.disabled = false;
+                    submitButton.textContent = '문의하기';
+                }, 3000);
+            }
+        });
+
+        // 스크롤 애니메이션
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
