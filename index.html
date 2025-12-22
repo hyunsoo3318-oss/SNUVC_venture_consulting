@@ -40,9 +40,18 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo img {
+            height: 48px;
+            width: auto;
+            max-width: 200px;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
         }
 
         .nav-links {
@@ -529,7 +538,9 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">SNUVC</div>
+            <div class="logo">
+                <img src="images/logo.png" alt="SNUVC">
+            </div>
             <div class="nav-links">
                 <a href="#about">소개</a>
                 <a href="#investors">투자자 네트워크</a>
