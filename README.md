@@ -1,64 +1,60 @@
-# SNUVC 벤처 컨설팅 랜딩 페이지
+# SNUVC — SNU Venture Consulting
 
-서울대학교 벤처 컨설팅 팀 SNUVC의 랜딩 페이지입니다. HTML, CSS, JavaScript를 사용하여 구현한 단일 페이지 애플리케이션입니다.
+> *Global VC insight for student founders — delivered by Seoul National University undergraduates.*
 
-## 기술 스택
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Google Apps Script](https://img.shields.io/badge/Google%20Apps%20Script-4285F4?style=flat&logo=google&logoColor=white)
 
-- HTML5: 시맨틱 마크업 구조
-- CSS3: 인라인 스타일을 활용한 스타일링
-- Vanilla JavaScript: 폼 제출 및 인터랙션 처리
-- Google Apps Script: 폼 데이터 수집 및 저장
+## Overview
 
-## 주요 기능
+SNUVC is the marketing and landing site for **Seoul National University Venture Consulting**, an undergraduate club that meets top-tier venture capitalists in Korea and Silicon Valley and channels those insights into hands-on consulting and acceleration for student and early-stage founders. The site is a single, self-contained `index.html` page — no build step, no runtime dependencies — that presents the club's value proposition, its investor and professor network, the team, and a working contact form. Lead submissions are captured serverlessly through a Google Apps Script Web App that writes into a Google Sheets backend.
 
-반응형 네비게이션
-- 고정 헤더 네비게이션 바
-- 앵커 링크를 통한 섹션 간 부드러운 스크롤
-- 모바일 환경에서 네비게이션 링크 숨김 처리
+## Technical Highlights
 
-섹션 구성
-- Hero 섹션: 메인 타이틀 및 CTA 버튼
-- 소개 섹션: SNUVC의 핵심 가치 제안
-- 투자자 네트워크: 한국 및 실리콘밸리 VC 정보
-- 팀 소개: 팀원 프로필 카드
-- 서비스: 벤처 컨설팅 및 액셀러레이팅 서비스
-- 문의 폼: Google Apps Script 연동
+- **Zero-dependency single-page site.** The entire experience lives in one `index.html` file with all styling hand-written inline in a `<style>` block, after migrating off the Tailwind CDN. This removes any external CSS/JS dependency and lets the page render fully offline or from any static host.
+- **Section architecture.** The page is composed as a sequence of semantic `<section>` blocks — Hero, About, Investor Network, Team, Services, and Contact — alternating between black / white / gray background themes (`.section-bg-black`, `.section-bg-white`, `.section-bg-gray`) for visual rhythm, with a fixed top navigation bar linking to each anchor.
+- **Investor & professor network.** A dedicated `#investors` section splits contacts into **Korea** and **Silicon Valley** groups. Korea features real partners (한국투자증권, 블루포인트파트너스, Intervest) and a featured SNU Business School professor (이영민), each rendered as an `.investor-card` with name, position, and an insight description. Placeholder `.investor-card-coming` "Coming Soon" cards mark the in-progress Silicon Valley network expansion.
+- **Team showcase.** The `#team` section renders six members as circular-avatar `.team-card`s, each with a cropped photo (`images/1.jpg`–`6.jpg`, `object-fit: cover` in a `border-radius: 50%` frame), name, department, and admission year.
+- **Contact form → Google Apps Script → Google Sheets.** The contact form is wired to a Google Apps Script Web App endpoint. On submit, vanilla JS intercepts the event, collects `name` / `email` / `company` / `message` plus an auto-generated `ko-KR` `timestamp`, and POSTs the payload as JSON via the `fetch` API in `mode: 'no-cors'` to bypass CORS. The submit button is disabled during transmission to prevent duplicate sends, and success/error feedback is surfaced through a `.status-message` element before the button re-enables after a 3-second cooldown.
+- **Scroll interactions.** Smooth anchor scrolling is implemented by intercepting every `a[href^="#"]` click and calling `scrollIntoView({ behavior: 'smooth' })`. An `IntersectionObserver` watches each section and applies a `fade-in` class (a CSS `@keyframes` opacity + translateY animation) as sections enter the viewport.
+- **Responsive layout.** Card grids use CSS Grid with `repeat(auto-fit, minmax(...))` so column counts adapt fluidly to viewport width. A `max-width: 768px` media query collapses grids to a single column, hides the desktop nav links, and scales down hero/section typography and form padding for mobile.
 
-문의 폼 제출
-- Google Apps Script Web App을 통한 폼 데이터 전송
-- 제출 중 버튼 비활성화 및 상태 메시지 표시
-- 성공/실패 피드백 제공
-- 타임스탬프 자동 추가
+## Features
 
-스크롤 애니메이션
-- Intersection Observer API를 활용한 스크롤 기반 페이드인 효과
-- 섹션이 뷰포트에 진입할 때 자동 애니메이션 트리거
+- Fixed, theme-aware navigation with smooth in-page scrolling
+- Hero section with a clear value proposition and call-to-action
+- Investor & professor network split by region (Korea / Silicon Valley)
+- Team profile cards with photos, departments, and class years
+- Services breakdown (venture consulting + acceleration) with checkmark lists
+- Serverless contact form backed by Google Apps Script + Google Sheets
+- Scroll-triggered fade-in animations via Intersection Observer
+- Fully responsive, mobile-first layout
 
-## 구현 세부사항
+## Tech Stack
 
-단일 HTML 파일에 모든 스타일을 인라인으로 포함하여 외부 의존성 없이 독립적으로 동작하도록 구현했습니다. CSS Grid의 auto-fit과 minmax를 조합하여 화면 크기에 따라 자동으로 컬럼 수가 조정되는 반응형 레이아웃을 구현했습니다.
+| Layer | Technology |
+| --- | --- |
+| Markup | HTML5 (semantic sections) |
+| Styling | Hand-written inline CSS3 (Grid, Flexbox, media queries, keyframe animations) |
+| Interactivity | Vanilla JavaScript (Fetch API, Intersection Observer) |
+| Backend | Google Apps Script Web App → Google Sheets |
 
-부드러운 스크롤링은 querySelectorAll을 사용하여 모든 앵커 링크를 선택하고, scrollIntoView 메서드의 behavior: 'smooth' 옵션을 활용하여 구현했습니다.
+## Getting Started
 
-폼 제출 처리는 fetch API를 사용하여 Google Apps Script Web App에 POST 요청을 보냅니다. no-cors 모드를 사용하여 CORS 제한을 우회하고, 제출 중에는 버튼을 비활성화하여 중복 제출을 방지합니다.
+This is a static site with no build step. Clone the repository and open the page directly:
 
-스크롤 애니메이션은 Intersection Observer API를 사용하여 구현했습니다. 각 섹션을 관찰하고 뷰포트에 진입할 때 fade-in 클래스를 추가하여 CSS 애니메이션을 트리거합니다.
-
-반응형 디자인은 미디어 쿼리를 통해 모바일 환경에서 그리드 레이아웃을 단일 컬럼으로 변경하고, 폰트 크기와 패딩을 조정합니다.
-
-카드 호버 효과는 CSS transition을 활용하여 border-color와 box-shadow가 부드럽게 변화하도록 구현했습니다.
-
-## 프로젝트 구조
-
-```
-SNUVC_venture_consulting/
-├── index.html
-└── images/
-    ├── 1.jpg
-    ├── 2.jpg
-    ├── 3.jpg
-    ├── 4.jpg
-    ├── 5.jpg
-    └── 6.jpg
+```bash
+git clone https://github.com/hyunsoo3318-oss/SNUVC_venture_consulting.git
+cd SNUVC_venture_consulting
+open index.html        # macOS — or just double-click the file
 ```
 
+### Configuring the contact form
+
+The form posts to a Google Apps Script Web App URL defined as `SCRIPT_URL` in the inline `<script>` of `index.html`. To point it at your own Google Sheets backend, deploy an Apps Script Web App (`doPost` handler that appends rows to a Sheet) and replace the `SCRIPT_URL` constant with your deployment URL.
+
+---
+
+© 2025 SNUVC. All rights reserved.
